@@ -24,3 +24,10 @@
 *.dtbcache
 tools
 artifacts
+*/obj
+*/bin
+*/.vs
+YahooFantasyAPIWrapper/YahooFantasyDataServer/obj
+YahooFantasyAPIWrapper/YahooFantasyDataServer/bin
+YahooFantasyAPIWrapper/YahooFantasyAPIWrapper/obj
+YahooFantasyAPIWrapper/YahooFantasyAPIWrapper/bin
