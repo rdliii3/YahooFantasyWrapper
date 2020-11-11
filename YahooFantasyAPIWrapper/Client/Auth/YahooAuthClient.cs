@@ -107,8 +107,10 @@ namespace YahooFantasyWrapper.Client
 
             var client = _factory.CreateClient(endPoint, new AuthenticationHeaderValue("Bearer", Auth.AccessToken));
             var request = _factory.CreateRequest(endPoint);
+            request.Method = HttpMethod.Get;
+            request.Headers.Add("Authorization", $"Bearer {Auth.AccessToken}");
 
-            var response = await client.GetAsync(request.RequestUri);
+            var response = await client.SendAsync(request);
 
             var result = await response.Content.ReadAsStringAsync();
             var userInfo = JsonConvert.DeserializeObject<UserInfo>(result);
